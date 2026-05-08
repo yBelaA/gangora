@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.seesaw {
+    position: relative;
+    width: 600px;
+    height: 4px;
+    background-color: white;
+    transform-origin: center;
+}
+
+.hexagon {
+    position: absolute;
+    /* Centraliza sobre a linha */
+    bottom: 4px; 
+    
+    /* DEFINIÇÃO DO HEXÁGONO REGULAR */
+    width: 40px; 
+    height: 46.18px; /* Cálculo: largura / cos(30°) para ser regular */
+    background-color: white;
+    
+    /* Clip-path para hexágono regular com vértices para cima e para baixo */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    
+    left: 50%;
+    /* O ponto de rotação deve ser o centro exato */
+    transform-origin: center center;
+    /* Ajuste inicial */
+    transform: translateX(-50%) translateY(0);
+}
